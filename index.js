@@ -16,7 +16,7 @@
             }
           }
 
-        setAttributes(iframe, {"src": "frame/index.html", "style": "opacity: 1 !important; width: 100% !important; height: 100% !important;" });
+        setAttributes(iframe, {"src": "frame/index.html", "style": "opacity: 1 !important; width: 100% !important; height: 100% !important;", "frameborder": "0" });
 
     }
 
