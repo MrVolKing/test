@@ -19,48 +19,40 @@
                 background-repeat: no-repeat;
             }
 
-            .container div:last-child{
-                display: none;
-            }
-
-            @media screen and (max-width: 768px){
-                .container div:last-child{
-                    display: block;
-                }
-
-                .container div:first-child{
-                    display: none;
-                }
-            }
-
-            @media screen and (max-width: 736px){
-                .container div:last-child{
-                    display: none;
-                }
-
-                .container div:first-child{
-                    display: block;
-                }
-            }
-
-            @media screen and (max-width: 735px){
-                .container div:last-child{
-                    display: block;
-                }
-
-                .container div:first-child{
-                    display: none;
-                }
-            }
-
         </style>
+
     </head>
     <body>
         <div class="container">
 
-            <div style="background-image: url(./landscape.png)"></div>
-            <div style="background-image: url(./portrait.png)"></div>
+            <div id="portrait" style="background-image: url(./portrait.png)"></div>
+            <div id="landscape" style="background-image: url(./landscape.png)"></div>
 
         </div>
+
+        <script>
+
+            const portrait = document.getElementById('portrait');
+            const landscape = document.getElementById('landscape');
+
+            
+            const resizeFunc = () => {
+                if (window.outerWidth < window.outerHeight) {
+                    // console.log('port');
+                    portrait.style.display = 'block';
+                    landscape.style.display = 'none';
+                } else {
+                    // console.log('landscape');
+                    portrait.style.display = 'none';
+                    landscape.style.display = 'block';
+                }
+            }
+
+            resizeFunc();
+             
+            window.addEventListener("resize", resizeFunc, false);
+            
+        </script>
+
     </body>
 </html>
